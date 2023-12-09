@@ -33,7 +33,7 @@
 }
 @font-face {
     font-family: Bender;
-    src: url("../fonts/Bender/Bender.otf");
+    src: url("fonts/Bender/Bender.otf");
 }
 body { background: #e4e0d6; }
 body, h1, h2, h3, ul, p {
@@ -46,7 +46,7 @@ a {
 }
 ul { list-style-type: none; }
 header.start {
-    background: url("../img/Layer2.png");
+    background: url("img/Layer2.png");
     height: 710px;
     background-size: cover;
 }
@@ -116,7 +116,7 @@ header .reg a, header .auth a {
     border-bottom: 2px dashed black;
 }
 header .auth::before {
-    content: url("../img/icons/face.svg");
+    content: url("img/icons/face.svg");
     padding-right: 7px;
 }
 header .auth a {
@@ -153,7 +153,7 @@ header .cart .icon {
     width: 45px;
     height: 34px;
    
-    background: url("../img/CartIcon.png");
+    background: url("img/CartIcon.png");
 }
 /*---- end menu ----*/
 
@@ -297,10 +297,10 @@ main.start { margin-top: -76px; }
     height: 17px;
 }
 .products nav .rules .left {
-    background: url("../img/icons/left.svg");
+    background: url("img/icons/left.svg");
 }
 .products nav .rules .right {
-    background: url("../img/icons/right.svg");
+    background: url("img/icons/right.svg");
 }
 /*---end tovars navigator ----*/
 
@@ -346,9 +346,9 @@ main.start { margin-top: -76px; }
     width: 46px;
     height: 46px;
 }
-.new { background: url("../img/new.png"); }
-.hot { background: url("../img/HOT.png"); }
-.sale { background: url("../img/SALE.png"); }
+.new { background: url("img/new.png"); }
+.hot { background: url("img/HOT.png"); }
+.sale { background: url("img/SALE.png"); }
 /*---end блок товаров----*/
 
 /*промо-товары*/
@@ -365,19 +365,19 @@ main.start { margin-top: -76px; }
 }
 .promo article:nth-child(1) {
     grid-area: promo1;
-    background: url("../img/Layer4.png");
+    background: url("img/Layer4.png");
     background-size: cover;
 }
 .promo article:nth-child(2) {
     grid-area: promo2;
     text-align: right;
-    background: url("../img/Layer5.png");
+    background: url("img/Layer5.png");
     background-size: cover;
 }
 .promo article:nth-child(3) {
     grid-area: promo3;
     color: white;
-    background: url("../img/Layer6.png");
+    background: url("img/Layer6.png");
     background-size: cover;
 }
 .promo article div {
@@ -394,7 +394,7 @@ main.start { margin-top: -76px; }
 
 /*---category products----*/
 .category .description {
-    background: url("../img/img.png");
+    background: url("img/img.png");
     background-size: cover;
     display: block;
     border: 0;
@@ -412,7 +412,7 @@ main.start { margin-top: -76px; }
 .category .categoryPromo {
     display: block;
     font-family: SupermolotLight;
-    background: url("../img/promo1.png") no-repeat;
+    background: url("img/promo1.png") no-repeat;
     background-size: cover;
     padding: 54px 0 0 50px;
     border-bottom: 0;
@@ -442,7 +442,7 @@ main.start { margin-top: -76px; }
 
 /*о магазине*/
 .start .info {
-    background: url("../img/Layer9.png");
+    background: url("img/Layer9.png");
     background-size: cover;
     padding: 40px 0 45px 0;
 }
@@ -642,13 +642,13 @@ footer p, footer p a {
 }
   
 .product .price-contact .contact ul li:nth-child(1)::before {
-    content: url("../img/icons/shipping.svg");   
+    content: url("img/icons/shipping.svg");   
 }
 .product .price-contact .contact ul li:nth-child(2)::before {
-    content: url("../img/icons/support.svg");   
+    content: url("img/icons/support.svg");   
 }
 .product .price-contact .contact ul li:nth-child(3)::before {
-    content: url("../img/icons/gifts.svg");   
+    content: url("img/icons/gifts.svg");   
 }
 .product .price-contact .contact ul li span {
     text-transform: uppercase;
