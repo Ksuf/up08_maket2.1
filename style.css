@@ -1,0 +1,1098 @@
+* {
+    margin: 0; padding: 0;
+    border: 0;
+       font-family: Supermolot;
+}
+body { background: #e4e0d6; }
+body, h1, h2, h3, ul, p {
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+ul { list-style-type: none; }
+header.start {
+    background: url("../img/Layer2.png");
+    height: 710px;
+    background-size: cover;
+}
+/*---- start menu ----*/
+header nav {
+    display: grid;
+    gap: 0;
+    grid-template-columns: 2fr 10fr 1fr 1fr; 
+    grid-template-areas: "A B C D"
+                        "A . F F";
+    align-items: center;
+}
+header .logo { grid-area: A; }
+header nav ul { grid-area: B; }
+header .auth { grid-area: C; }
+header .reg { grid-area: D; }
+header .cart { grid-area: F; }
+
+header nav ul {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    height: 60px;
+    background: white;
+}
+header nav ul li { height: inherit; }
+header nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: inherit; /*наследуем от родителя*/
+}
+header nav ul li:hover {
+    background: #021563;
+}
+header nav ul li a:hover { color: white }
+header .logo a {
+    background: #ed1651;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 170px;
+    height: 120px;
+    text-transform: uppercase;
+    font-size: 33px;
+    color: white;
+    line-height: 30px;
+}
+header .logo span {
+    font-family: SupermolotBold;
+    font-size: 41px;
+}
+header .reg, header .auth {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background: white;
+    font-family: SupermolotLight;
+}
+header .reg {
+    padding-right: 16px;
+}
+header .reg a, header .auth a {
+    border-bottom: 2px dashed black;
+}
+header .auth::before {
+    content: url("../img/icons/face.svg");
+    padding-right: 7px;
+}
+header .auth a {
+    border-color:#ed1651;
+    color: #ed1651;
+}
+/*превью корзина*/
+header .cart a{
+    background: #021563;
+    color: white;
+    height: 50px;
+    display: grid;
+    grid-template-rows: 25px 14px;
+    padding: 10px 10px 0 18px;
+    grid-template-areas: "price  icon"
+                         "count  icon";
+    align-items: center;
+}
+header .cart .price  {
+    font-size: 14px;
+    grid-area: price;
+}
+header .cart .price span { 
+    font-family: SupermolotBold;
+    font-size: 20px;
+}
+header .cart .count {
+    grid-area: count;
+    font-size: 12px;
+    color: #999999;
+}
+header .cart .icon {
+    grid-area: icon;
+    width: 45px;
+    height: 34px;
+   
+    background: url("../img/CartIcon.png");
+}
+/*---- end menu ----*/
+
+header h1.start {
+     font-family: SupermolotLightItalic;
+}
+header h1 {
+    margin: 90px 0 14px 0;
+    font-size: 72px;
+    font-family: SupermolotLightThin;
+    line-height: 62.85px;
+    text-transform: uppercase;
+}
+header h1 span {
+    font-family: SupermolotBoldItalic;
+    display: block;
+}
+header p.start {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 30px;
+}
+header p {
+    font-family: SupermolotLight;
+    color: #999999;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+header.start .button-empty {
+    margin-left: 270px; 
+    color: white;
+    z-index: 21;
+    position: relative;
+}
+.button-empty:hover {
+    background: #ed1651;;
+}
+header .button-empty, .categoryPromo button {
+    background: none;
+    display: block;
+    width: 253px;
+    border: 3px solid #ed1651;
+    font-family: SupermolotItalic;
+    font-size: 18px;
+    padding:  18px 0 22px 0;
+    text-align: center;
+}
+  
+header .button-empty:hover { cursor: pointer; }
+header .text {
+    font-size: 340px;
+    color: rgba(51, 51, 51, 0.08);
+    font-family: SupermolotBoldItalic;
+    position: absolute;
+    z-index: 1;
+    left: -120px;
+    line-height: 214px;
+}
+
+header > div,  footer, main  {
+    width: 1170px;
+    margin: 0 auto;
+}
+button:hover, .products, .promo, .start .info {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.12);
+}
+.products, .promo {
+    margin-bottom: 20px;
+}
+main.start { margin-top: -76px; }
+
+/*----start schema products ----*/
+.products { display: grid; }
+.news {
+    grid-template-areas: "title title title title"
+                         "news1 news2 news3 news4"
+                         "news5 news6 news7 news8";
+}
+.popular {
+    grid-template-areas: "title title title title"
+                         "news1 news2 news3 news4";
+}
+.category {
+    grid-template-areas: "title title title title"
+                         "descr descr descr prod4"
+                         "prod1 prod2 prod3 prod5"
+                         "prod6 prod7 categoryPromo categoryPromo"
+                         "prod8 prod9 categoryPromo categoryPromo"
+                         "prod10 prod12 prod13 prod14"
+                         "title2 title2 title2 title2";
+}
+.products nav.title {
+    grid-area: title;
+}
+.products nav.pagination {
+    grid-area: title2; 
+}
+.category .description {
+    grid-area: descr; 
+}
+.category .categoryPromo {
+    grid-area: categoryPromo; 
+}
+/*----end schema ----*/
+
+/*---start tovars navigator ----*/
+.products nav {
+    display: flex;
+    justify-content: space-between;
+    height: 76px;
+    padding: 0 30px;
+    font-size: 24px;
+    line-height: 0;
+    color: #021563;
+    background: white;
+    align-items: center;
+    font-family: SupermolotLight;
+}
+.category nav {
+    justify-content: end;
+    color: #333333;
+    font-size: 14px;
+}
+.products nav .rules button {
+    display: inline-block;
+}
+.products nav .rules [class^="n"] {
+    background: #e9e9e9;
+    width: 30px;
+    height: 30px;
+    font-family: Bender;
+}
+.products nav .rules [class^="n"].active {
+    background: #ed1651;
+    color: white
+}
+.products nav .rules button.left, 
+.products nav .rules button.right {
+    width: 13px;
+    height: 17px;
+}
+.products nav .rules .left {
+    background: url("../img/icons/left.svg");
+}
+.products nav .rules .right {
+    background: url("../img/icons/right.svg");
+}
+/*---end tovars navigator ----*/
+
+/*---start блок товаров----*/
+.products article {
+    border-left: 2px solid #f6f6f6;
+    border-bottom: 2px solid #f6f6f6;
+    padding-bottom: 47px;
+    display: grid;
+    grid-template-areas: "img img"
+                         "title price";
+    row-gap: 31px;
+    background: white;
+}
+.products article:nth-child(1),
+.products article:nth-child(4),
+.products article:nth-child(8),
+.products article:nth-child(11),
+.products article:nth-child(13)
+ {
+    border-left: 0;
+}
+.products article .img {
+    width: 100%;
+    height: 236px;
+    background: #d1d3d4;
+    grid-area: img;
+}
+.products article .title {
+    margin-left: 29px;
+    grid-area: title;
+}
+.products article .price {
+    grid-area: price;
+    font-family: SupermolotLightItalic;
+    font-size: 18px;
+    color: #ed1651;
+}
+/*флажки*/
+.label {
+    position: absolute;
+    margin: -2px 0 0 -2px;
+    width: 46px;
+    height: 46px;
+}
+.new { background: url("../img/new.png"); }
+.hot { background: url("../img/HOT.png"); }
+.sale { background: url("../img/SALE.png"); }
+/*---end блок товаров----*/
+
+/*промо-товары*/
+.promo {
+    display: grid;
+    grid-template-columns: 293px 293px 100px;
+    grid-template-areas: "promo1 promo2 promo3 promo3";
+}
+.promo article {
+    background: #ed1651;
+    height: 312px;
+    border: 0;
+    padding: 20px;
+}
+.promo article:nth-child(1) {
+    grid-area: promo1;
+    background: url("../img/Layer4.png");
+    background-size: cover;
+}
+.promo article:nth-child(2) {
+    grid-area: promo2;
+    text-align: right;
+    background: url("../img/Layer5.png");
+    background-size: cover;
+}
+.promo article:nth-child(3) {
+    grid-area: promo3;
+    color: white;
+    background: url("../img/Layer6.png");
+    background-size: cover;
+}
+.promo article div {
+    margin-top: 225px;
+    font-family: SupermolotLightItalic;
+    text-transform: uppercase;
+    font-size: 32px;
+    line-height: 36px;
+}
+.promo article span {
+    font-family: SupermolotBoldItalic;
+    display: block;
+}
+
+/*---category products----*/
+.category .description {
+    background: url("../img/img.png");
+    background-size: cover;
+    display: block;
+    border: 0;
+    padding-left: 45px;
+    padding-top: 80px;
+    font-family: SupermolotLight;
+    font-size: 14px;
+    border-bottom: 2px solid #f6f6f6;
+}
+.category .description h3 {
+    font-family: SupermolotItalic;
+    font-size: 38px;
+    text-transform: uppercase;
+}
+.category .categoryPromo {
+    display: block;
+    font-family: SupermolotLight;
+    background: url("../img/promo1.png") no-repeat;
+    background-size: cover;
+    padding: 54px 0 0 50px;
+    border-bottom: 0;
+}
+.category .categoryPromo h3 {
+    font-size: 36px;
+    line-height: 36px;
+    font-family: SupermolotBoldItalic;
+    text-transform: uppercase;
+    width: 60%;
+    margin-bottom: 24px;
+}
+.category .categoryPromo .price {
+    margin-top: 85px;
+    font-size: 30px;
+    color: #ed1651;
+    font-family: SupermolotBoldItalic;
+}
+.category .price span {
+    font-size: 36px;
+}
+.category .categoryPromo button {
+    width: 173px;
+    height: 51px;
+    padding: 0;
+}
+
+/*о магазине*/
+.start .info {
+    background: url("../img/Layer9.png");
+    background-size: cover;
+    padding: 40px 0 45px 0;
+}
+.start .info h2, .start .info p { 
+    margin: 0 150px 0 500px; 
+}
+.start .info h2 {
+    font-family: SupermolotBoldItalic;
+    font-size: 24px;
+    color:#021563
+}
+.start .info p {
+    font-family: SupermolotLight;
+    font-size: 14px;
+    line-height: 24px;
+    color: #222429;
+    margin-bottom: 14px;
+}
+
+/*footer*/
+footer {
+    background: #01104c;
+    padding: 12px 20px;
+    width: 1130px;
+    margin-top: 22px;
+    margin-bottom: 62px;
+    position: relative;
+}
+footer p, footer p a {
+    font-family: SupermolotLight;
+    font-size: 11px;
+    line-height: 13px;
+    color: #999999;
+}
+.top {
+    background: none;
+    position: absolute;
+    bottom: 20px;
+    right: 28px;
+}
+.top a {
+    color: white;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.white {
+    background: white;
+}
+
+
+/*product start*/
+.product {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 24px;
+}
+.product .photo {
+    width: 470px;
+    height: 470px;
+    background-color: rgb(204, 204, 204);
+}
+.product .photo .loupe {
+    margin: 25px 0 0 25px;
+}
+.product .slider {
+    display: flex;
+    justify-content: center;
+    gap: 17px;
+    align-items: center;
+    padding: 24px 0;
+}
+.product .slider .preview {
+    background-color: rgb(153, 153, 153);
+    width: 56px;
+    height: 56px;  
+    border: 2px solid #fff;    
+}
+.product .slider .preview:hover {
+    border-color: rgb(219, 219, 219);      
+}
+.product .slider .active {
+    border-color: rgb(0, 0, 0);
+}
+
+.product .description {
+    margin-top: 36px;
+    width: 370px;
+}
+.product .description h2 {
+    font-family: SupermolotLightItalic;
+    font-size: 36px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid rgb(237, 22, 81);
+    margin-bottom: 17px;
+}
+.product .description p {
+    color: rgb(85, 85, 85); 
+    line-height: 1.286;    
+    font-size: 14px;
+}
+.product .description label {
+    margin-top: 43px;
+    display: block;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    line-height: 1.2;
+}  
+.product .description select {
+    background-color: rgb(233, 233, 233);
+    width: 229px;
+    height: 30px;
+    color: rgb(0, 0, 0);
+    padding-left: 12px;      
+}
+
+  
+.product .price-contact {
+    margin-top: 35px;   
+}
+.product .price-contact .cart {
+    width: 219px;
+    height: 187px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 22px;
+    border: 1px solid rgb(219, 219, 219);
+}
+.product .price-contact .cart .price-old {
+    font-family: SupermolotLightItalic;
+    color: #999999;
+    text-decoration: line-through;
+}
+.product .price-contact .cart .price {
+    color: #ed1651;
+    font-size: 26px;
+    font-family: SupermolotBold;
+    margin: 11px 0 15px 0
+}
+.product .price-contact .cart p {
+    font-size: 11px;
+    padding-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}  
+.product .price-contact button {
+    background-color: rgb(237, 22, 81);
+    width: 129px;
+    height: 39px;
+    margin: 17px 0 14px 0;
+    font-size: 15px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.588; 
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+.product .price-contact button img {
+    width: 20px;
+    height: 20px;
+}
+  
+
+
+.product .price-contact .contact ul li {
+    font-family: SupermolotLight;
+    color: #999999;
+    margin-bottom: 19px;
+    font-size: 14px;
+    line-height: 15px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 15px;
+    margin-left: -3px
+}
+.product .price-contact .contact ul li::before {
+    display: block;
+    border: 3px solid rgb(233, 233, 233);
+    border-radius: 50%;
+    float: left;
+    height: 38px;
+    width: 38px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-row: 1/3;
+    align-self: center;
+}
+  
+.product .price-contact .contact ul li:nth-child(1)::before {
+    content: url("../img/icons/shipping.svg");   
+}
+.product .price-contact .contact ul li:nth-child(2)::before {
+    content: url("../img/icons/support.svg");   
+}
+.product .price-contact .contact ul li:nth-child(3)::before {
+    content: url("../img/icons/gifts.svg");   
+}
+.product .price-contact .contact ul li span {
+    text-transform: uppercase;
+    font-family: SupermolotBold;
+    color: rgb(153, 153, 153);
+    display: block;
+}
+.popular article:nth-child(2) {
+    border-left: 0;
+}
+.popular article:nth-child(4) {
+    border-left: 2px solid #f6f6f6;
+}
+
+.w30 {
+    padding: 30px;
+}
+
+.register, .login, .account, .order_by .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 63px;
+    font-size: 14px;
+    color: #999;
+}
+.order_by .content {
+    display: flex;
+    gap: 79px;
+}
+
+
+/*-- регистрация и авторизация--*/
+.register input, 
+.login input, 
+.account input, 
+.order_by input {
+    width: 506px;
+    height: 47px;
+    background: rgb(233, 233, 233);
+    margin-top: 5px;
+    font-size: 16px;
+    padding-left: 16px;
+}
+.column {
+    display: grid;
+    row-gap: 25px;
+}
+.login h3, .account h3 {
+    color: rgb(0, 0, 0); 
+    font-size: 24px; 
+    font-family: SupermolotBoldItalic;
+    line-height: 1.2;
+}  
+.button-red, a.button-red {
+    width: min-content;
+    background-color: rgb(237, 22, 81);
+    width: 220px;
+    height: 47px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-family: SupermolotLight;
+}
+a.button-red {
+    display: flex;
+    height: 41px;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgb(237, 22, 81);
+}
+.button-red:hover {
+    background: white;
+    border: 3px solid rgb(237, 22, 81);
+    color:  rgb(237, 22, 81);
+    cursor: pointer;
+}
+.button-white {
+    width: 94px;
+    height: 47px;
+    border: 5px solid rgb(237, 22, 81);
+    background: white;
+    font-family: SupermolotLight;
+    font-size: 18px;
+}
+.button-white:hover {
+    background-color: rgb(237, 22, 81);
+    cursor: pointer;
+    color: white
+}
+.login .row a {
+    color:  rgb(237, 22, 81);
+    font-family: SupermolotLight;
+    margin-left: 33px;
+}
+.login .row a:hover {
+    font-weight: 900;
+}
+
+/*-- аккаунт --*/
+.house {
+    display: flex;
+    gap: 45px
+}
+.house input {
+    width: 222px;
+} 
+.account h3 {
+    margin-top: 19px;
+}
+.account h3:nth-child(1){
+    margin-top: 0
+}
+.orders h3 {
+    margin-bottom: 15px;
+}
+.orders .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 41px;
+}
+.orders .info {
+    font-family: SupermolotLight;
+    color: #000;
+}
+.orders .number {
+    font-size: 24px;
+    line-height: 20px;    
+}
+.orders .price {
+    font-size: 17px;
+}
+.orders .date {
+    font-size: 12px;
+    color: #999;
+    line-height: 18px;
+}
+.orders .status {
+    font-size: 36px;
+    color: #ed1651;
+    line-height: 22px;
+}
+
+/*--корзина--*/
+form.cart {
+    padding-bottom: 35px;
+}
+form.cart .row {
+    display: grid;
+    grid-template-columns: 200px 270px 140px 155px 200px 130px 70px;
+    border-bottom: 2px solid rgb(246, 246, 246);
+    align-items: center;
+    text-align: center;
+}
+form.cart .head {
+    padding: 30px 0;
+    color: rgb(153, 153, 153);
+    line-height: 2.143; 
+    font-size: 14px;
+}
+form.cart .head div:nth-child(1) {
+    margin-left: 30px;
+    text-align: left;
+}
+form.cart .img {
+    width: 170px;
+    height: 138px;
+    background:  #999999;
+}
+form.cart .title {
+    font-size: 18px;
+    color: rgb(85, 85, 85);
+    line-height: 1.2;      
+}
+form.cart .availability {
+    font-size: 14px;
+    color: rgb(237, 22, 81);
+    line-height: 1.2;
+}
+form.cart .price {
+    font-size: 18px;
+    color: rgb(93, 93, 93);
+    font-style: italic;
+    line-height: 1.2;
+}
+form.cart .count {
+    width: 140px;
+    background: #e9e9e9;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    height: 47px;
+    align-items: center;
+    margin: 0 auto;
+}
+  
+form.cart .count .minus, form.cart .count .plus  {
+    width: 40px;
+    cursor: pointer;
+}
+form.cart .count .number {
+    width: 60px;
+    line-height: 47px;
+    border-left: 1px solid rgb(218, 218, 218);
+    border-right: 1px solid rgb(218, 218, 218);
+}
+form.cart .summa {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-family: SupermolotBoldItalic;
+    line-height: 1.2;
+}  
+form.cart .delete {
+    background: rgb(233, 233, 233);
+    width: 25px;
+    height: 25px; 
+    border-radius: 50%;     
+    text-align: center;
+}
+form.cart .delete:hover {
+    background: rgb(237, 22, 81);
+}
+form.cart p {
+  font-size: 24px;
+  font-family: SupermolotBoldItalic;
+  color: rgb(0, 0, 0);
+  line-height: 48px;
+  text-align: right;
+  padding-right: 46px;
+}
+form.cart p span {
+    font-size: 30px;
+    margin-left: 40px;
+}
+form.cart .buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 46px 0 30px;
+}
+form.cart .buttons .button-red {
+    width: 292px;
+}
+
+/*--оформление заказа--*/
+details .content * {
+    font-family: SupermolotLight;  
+}
+details summary {
+    line-height: 78px;
+    color: #000;
+    font-family: SupermolotBold;
+    font-size: 24px;
+    list-style: none;
+    display:block; 
+}
+details .content h3 {
+    font-size: 18px;
+    font-family: Supermolot;
+    color: rgb(237, 22, 81);
+    font-weight: bold;
+}  
+details[open] summary {
+    background: #000;
+    color: #fff; 
+}
+/*step1*/
+.order_by details .content input {
+     width: 376px;
+     color: rgb(0, 0, 0);
+     font-size: 16px;
+     line-height: 1.2;
+}
+/*step2*/
+.order_by details .content .house {
+    gap: 34px
+}
+.order_by details .content .house input {
+    width: 162px;
+} 
+.order_by details .content label {
+    display: block;
+}  
+.order_by .col3 form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 52px 55px;
+    align-items: flex-start;
+}
+.order_by .col3 form .column {
+    gap: 19px;
+}
+.order_by .col3 form .b17 {
+    margin-bottom: 17px;
+}
+.order_by details .content ul li {
+    display: flex;
+    gap: 13px;
+    font-size: 16px; 
+    color: rgb(0, 0, 0);
+    line-height: 1.2;
+    height: 56px;
+    align-items: center;
+}
+input[type="radio"] {
+    display: none;
+}
+.order_by details .content ul label {
+    display: flex;
+    gap: 12px;
+}
+.order_by details .content ul label::before {
+    content: "";
+    min-width: 9px;
+    align-self: center;
+    height: 9px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    border: 3px solid rgb(203, 203, 203);
+    border-radius: 50%;
+    background: rgb(203, 203, 203);
+}
+.order_by details .content ul input[type=radio]:checked + label::before {
+    border: 3px solid rgb(23, 199, 190);
+    background: none;
+}
+.order_by details .content textarea {
+    background-color: rgb(233, 233, 233);
+    width: 355px; 
+    height: 191px;
+    margin-top: 4px;
+    padding: 22px 0 0 16px;
+} 
+details summary span {
+    padding-left: 29px;
+    color: #ed1651;
+    font-family: SupermolotBold;
+}
+/*step3*/
+details#step3 h3 {
+    margin: 29px 0 0 30px;
+}
+
+details#step3 .row, details#step3 .contact {
+    display: grid;
+    grid-template-columns: repeat(10,100px) 170px;
+}
+details#step3 .row {
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(93, 93, 93);
+}
+details#step3 .row:not(.head ) div
+{
+    font-family: SupermolotLightItalic;
+    margin-bottom: 37px; 
+    line-height: 1.2;
+}
+details#step3 .content .table span {
+    font-family: SupermolotLightItalic;
+}
+details#step3 .row div.title {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    font-family: SupermolotLight;
+    text-align: left;
+    padding-left: 30px;
+}
+details#step3 .row div.price {
+    grid-column-start: 7;
+    grid-column-end: 9;
+}
+details#step3 .row div.count {
+    grid-column-start: 9;
+    grid-column-end: 11;
+}
+details#step3 .row div.summ {
+    grid-column-start: 11;
+    grid-column-end: 12;
+}
+details#step3 .content div.summ span {
+    font-family: SupermolotBoldItalic; 
+}
+details#step3 .row span {
+    font-size: 15px;   
+} 
+details#step3 .row div.itog {
+    grid-column-start: 9;
+    grid-column-end: 12;
+    font-size: 24px; 
+    font-family: SupermolotBoldItalic; 
+    color: rgb(0, 0, 0);
+    line-height: 2;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0; 
+}
+details#step3 .row div.itog span.summ{
+    font-size: 30px; 
+    font-family: SupermolotBoldItalic; 
+}
+details#step3 .contact .column:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    padding-left: 30px;
+    gap:30px
+}
+details#step3 .contact .column:nth-child(2) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    gap:30px
+}
+details#step3 .contact .column:nth-child(3) {
+    grid-column-start: 7;
+    grid-column-end: 12;
+    gap: 26px
+}
+details#step3 .head {
+    color: rgb(153, 153, 153);
+    line-height: 2.143; 
+    font-size: 14px;
+    padding: 15px 0 13px 0;
+    border-bottom: 2px solid rgb(246, 246, 246);
+}
+details#step3  .row:not(.head ) div.summ {
+    font-family: SupermolotBoldItalic;
+    color: rgb(0, 0, 0);
+}
+details#step3 .row:nth-child(2) {
+    padding-top: 15px;
+}
+
+details#step3 .delivery h3 {
+    margin: 43px 0 12px 30px;
+}
+details#step3 .contact span {
+    display: block;
+    font-size: 18px;    
+    color: rgb(13, 11, 11);
+    line-height: 1.2;
+}
+details#step3 .comment {
+    width: 260px;
+}
+details#step3 button {
+    margin: 45px 0 27px 30px;
+}
+
+/*----подтверждение заказа-----*/
+.order .finish {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 420px;
+    margin-bottom: 100px;
+}  
+.order .finish p {
+        font-family: SupermolotLight;
+    line-height: 1.2;
+    color: rgb(85, 85, 85);
+    font-size: 18px;
+}
+.order .finish h3 {
+    color: #ed1651;
+    font-family: SupermolotBold;
+} 
+.order .finish h3 span {
+    font-family: SupermolotBold;
+    color: #000;
+}
+
+.button-black:hover {
+    background: white;
+    color: #000;
+    border: 3px solid #000
+}
+
